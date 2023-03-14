@@ -50,6 +50,7 @@ if __name__ == "__main__":
         py_versions = sys.argv[1:]
     else:
         py_versions = ["3.10", "3.11"]
+        print(f"Using default Python versions: {py_versions}")
 
     anyio.run(test, py_versions)
 
