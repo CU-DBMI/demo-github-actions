@@ -31,7 +31,7 @@ See the tree below for a brief description of directories and files.
 
 ## Overview of Actions
 
-- [1.example-action.yml](.github/workflows/1.example-action.yml): demonstrates how to run a basic Github Actions workflow.
-- [2.run-python-file.yml](.github/workflows/2.run-python-file.yml): demonstrates how to run a Python file while retaining environment consistency.
-- [3.run-matrixed-pytest-ghactions.yml](.github/workflows/3.run-matrixed-pytest-ghactions.yml): demonstrates how to run matrixed Python versions for confirming passing pytest tests using Github Actions.
+- [1.example-action.yml](.github/workflows/1.example-action.yml): demonstrates how to run a snippet of Python code in a basic Github Actions workflow.
+- [2.run-python-file.yml](.github/workflows/2.run-python-file.yml): demonstrates how to reliably reproduce the environment by installing dependencies using Poetry, and then run a Python file in that environment.
+- [3.run-matrixed-pytest-ghactions.yml](.github/workflows/3.run-matrixed-pytest-ghactions.yml): demonstrates how to run pytest tests against multiple versions of Python (i.e., "matrixed" Python versions) using Github Actions.
 - [4.run-matrixed-pytest-dagger.yml](.github/workflows/4.run-matrixed-pytest-dagger.yml): demonstrates how to run matrixed Python versions for confirming passing pytest tests using Github Actions and Dagger together.
