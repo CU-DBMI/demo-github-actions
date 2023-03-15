@@ -1,0 +1,26 @@
+name: run-matrixed-pytest-dagger
+on: [push]
+jobs:
+  run-matrixed-pytest-dagger:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10","3.11"]
+    steps:
+      - name: Checkout repo content
+        uses: actions/checkout@v3
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+      - name: Install poetry
+        uses: abatilo/actions-poetry@v2
+        with:
+          poetry-version: 1.4
+      - name: Install dependencies
+        run: poetry install
+      - name: Run Dagger using Python SDK
+        # note: uses Github Actions matrix to span testing on Github systems
+        # while retaining Dagger-based capabilities. It is also possible
+        # to run all Dagger tests as-is without a matrix strategy.
+        run: poetry run python dagger/run_tests.py ${{ matrix.python-version }}
